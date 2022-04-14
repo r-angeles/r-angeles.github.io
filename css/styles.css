@@ -1,17 +1,33 @@
+@font-face {
+    font-family: 'MateSC-Regular';
+    src: url('fonts/MateSC-Regular.ttf');
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand {
+    color: rgb(83, 83, 83);
+    pointer-events: none;
+    font-family: 'MateSC-Regular', sans-serif;
+}
+
 .btn-link:hover {
     opacity: 0.5;
+    transition: 0.3s;
 }
 
 .link-secondary {
     opacity: 0.5;
 }
 
-.main-nav a {
-    transition: 0.3s;
+.nav-main li {
+    padding-left: 20px;
 }
 
 .header-social-links {
-    padding-right: 15px;
+    padding-left: 20px;
 }
 
 .header-social-links a {
