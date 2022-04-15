@@ -5,17 +5,38 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    padding-top: 20px;
+    background-color: rgb(206, 206, 206);
+    position: relative;
+}
+
+section {
+    padding-bottom: 5%;
+    padding-top: 5%;
+    margin-top: 1.25%;
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(255, 255, 255);
+}
+
+.jumbotron {
+    margin: 20px;
 }
 
 .navbar-brand {
     color: rgb(83, 83, 83);
     pointer-events: none;
     font-family: 'MateSC-Regular', sans-serif;
+    font-weight: 500;
 }
 
 .btn-link:hover {
     opacity: 0.5;
     transition: 0.3s;
+}
+
+btn-link {
+    color:rgb(0, 0, 0);
 }
 
 .link-secondary {
@@ -24,6 +45,37 @@ body {
 
 .nav-main li {
     padding-left: 20px;
+}
+
+.navbar a,
+.navbar a:focus {
+    position: relative;
+    padding: 0 3px;
+    transition: 0.3s;
+}
+
+.nav-item a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #525252;
+    visibility: hidden;
+    width: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar .active:before,
+.navbar a:hover:before,
+.navbar li:hover > a:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.nav .header-social-links {
+    color: black;
 }
 
 .header-social-links {
@@ -40,4 +92,14 @@ body {
 
 .header-social-links a:hover {
     opacity: 0.5;
+}
+
+/*
+Hamburger
+*/
+
+@media (max-width: 992px){
+    .nav-item a:before {
+        background-color: #ffffff;
+    }
 }
