@@ -8,15 +8,32 @@ body {
     padding-top: 20px;
     background-color: rgb(206, 206, 206);
     position: relative;
+    /*Background picture*/
 }
 
 section {
+    background-color: rgb(255, 255, 255);
+}
+
+div.card {
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+div.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 7.5px 7.5px;
+}
+
+#home {
+    background-color: rgb(255, 255, 255, 0.7)
+}
+
+#about, #featured, #projects {
+    width: 100%;
     padding-bottom: 5%;
     padding-top: 5%;
     margin-top: 1.25%;
-    min-height: 100vh;
-    width: 100%;
-    background: rgb(255, 255, 255);
 }
 
 .jumbotron {
@@ -47,8 +64,8 @@ btn-link {
     padding-left: 20px;
 }
 
-.navbar a,
-.navbar a:focus {
+.nav-item a,
+.nav-item a:focus {
     position: relative;
     padding: 0 3px;
     transition: 0.3s;
@@ -67,15 +84,11 @@ btn-link {
     transition: all 0.3s ease-in-out 0s;
 }
 
-.navbar .active:before,
-.navbar a:hover:before,
-.navbar li:hover > a:before {
+.nav-item .active:before,
+.nav-item a:hover:before,
+.nav-item li:hover > a:before {
     visibility: visible;
     width: 100%;
-}
-
-.nav .header-social-links {
-    color: black;
 }
 
 .header-social-links {
@@ -94,12 +107,37 @@ btn-link {
     opacity: 0.5;
 }
 
-/*
-Hamburger
-*/
+footer {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
 
-@media (max-width: 992px){
-    .nav-item a:before {
-        background-color: #ffffff;
-    }
+.section-title {
+    text-align: center;
+    font-weight: light;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 300px;
+    height: 1px;
+    background: rgb(192, 192, 192);
+    bottom: 1px;
+    left: calc(50% - 150px);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #000000;
+    bottom: 0;
+    left: calc(50% - 35px);
 }

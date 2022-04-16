@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
   <head>
+    
     <!-- meta tags -->
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <meta name=robots content="index,follow">
@@ -13,13 +15,16 @@
     <meta name="copyright" content="Copyright 2022">
 
     <!-- Twitter Card data https://dev.twitter.com/cards/overview -->
+
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@rae_angeles">
     <meta name="twitter:title" content="r-angeles">
     <meta name="twitter:description" content="A personal website containing projects of r-angeles">  
     <meta name="twitter:creator" content="@rae_angeles">
     <meta name="twitter:image" content="IMAGE_FOR_TWITTER_CARD">
+
     <!-- Open Graph data http://ogp.me/ -->
+
     <meta property="og:title" content="r-angeles" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content=https://r-angeles.github.io/" />
@@ -28,7 +33,7 @@
     <meta property="og:site_name" content="Personal Website" />
 
     <!-- Bootstrap CSS -->
-    
+  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles.css" />
@@ -38,22 +43,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
-
     <title>r-angeles</title>
   </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbarText">
+  <body data-spy="scroll" data-target="#navbarText">
     <main>
       <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
           <div class="container">
             <a class="navbar-brand fs-4" href="#">r-angeles</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarText">
               <ul class="nav nav-main navbar-nav me-auto mb-2 mb-lg-0" role="tablist">
                 <li class="nav-item">
-                  <a href="#hero" class="nav-link px-2 link-dark scrollto active">HOME</a>
+                  <a href="#home" class="nav-link px-2 link-dark scrollto active">HOME</a>
                 </li>
                 <li class="nav-item">
                   <a href="#about" class="nav-link px-2 link-dark scrollto">ABOUT</a>
@@ -62,41 +63,39 @@
                   <a href="#featured" class="nav-link px-2 link-dark scrollto">FEATURED</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#portfolio" class="nav-link px-2 link-dark scrollto">PORTFOLIO</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#contact" class="nav-link px-2 link-dark scrollto">CONTACT</a>
+                  <a href="#projects" class="nav-link px-2 link-dark scrollto">PROJECTS</a>
                 </li>
               </ul>
-              <div class="header-social-links">
-                <a href="https://twitter.com/rae_angeles" class="link-dark btn-link twitter">
-                  <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#" class="link-dark btn-link facebook">
-                  <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#" class="link-dark btn-link instagram">
-                  <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/rae-angeles-a95925218/" class="link-dark btn-link linkedin">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="https://github.com/r-angeles" class="link-dark btn-link github">
-                  <i class="bi-github" role="img" aria-label="GitHub"></i>
-                </a>
-              </div>
+            </div>
+            <div class="header-social-links">
+              <a href="https://twitter.com/rae_angeles" class="link-dark btn-link twitter">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="link-dark btn-link facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="link-dark btn-link instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/rae-angeles-a95925218/" class="link-dark btn-link linkedin">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="https://github.com/r-angeles" class="link-dark btn-link github">
+                <i class="bi-github" role="img" aria-label="GitHub"></i>
+              </a>
             </div>
           </div>
         </nav>
       </header>
-
-      <section id="hero">
-        <div class="jumbotron">
-          <div class="container">
+      <section id="home">
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3">
+          <div>
             <h1 class="display-3">Hello, world!</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
           </div>
+        <div class="product-device box-shadow d-none d-md-block"></div>
+        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
         </div>
       </section>
       
@@ -128,47 +127,48 @@
         </div>
       </section>
       
-      <section id="portfolio">
+      <section id="projects">
         <div class="container col-xxl-8 px-4 py-5">
-          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-              <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy" width="700" height="500">
+          <h3 class="display-4 section-title">Projects</h3>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
             </div>
-            <div class="col-lg-6">
-              <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
-              <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+            <div class="col">
+              <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a short card.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      <section id="contact">
-        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-          <div class="row align-items-center g-lg-5 py-5">
-            <div class="col-lg-7 text-center text-lg-start">
-              <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
-              <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--
-      https://getbootstrap.com/docs/5.1/examples/heroes/
-      https://getbootstrap.com/docs/5.1/examples/headers/
-      -->
     </main>
+    <footer>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var scrollSpy = new bootstrap.ScrollSpy(document.body, {
         target: '#navbarText'
       })
-
     </script>
   </body>
 </html>
