@@ -3,6 +3,11 @@
     src: url('fonts/MateSC-Regular.ttf');
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     padding-top: 20px;
@@ -18,26 +23,21 @@ section {
 div.card {
     border-radius: 20px;
     transition: 0.5s;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    box-shadow: 0 0 14px -7px rgba(51, 51, 51, 0.7);
 }
 
-div.card:hover{
+div.card:hover {
     transform: translateY(-5px);
-    box-shadow: 7.5px 7.5px;
-}
-
-#home {
-    background-color: rgb(255, 255, 255, 0.7)
 }
 
 #about, #featured, #projects {
     width: 100%;
     padding-bottom: 5%;
     padding-top: 5%;
-    margin-top: 1.25%;
-}
-
-.jumbotron {
-    margin: 20px;
 }
 
 .navbar-brand {
@@ -48,11 +48,11 @@ div.card:hover{
 }
 
 .btn-link:hover {
-    opacity: 0.5;
+    color:rgba(0, 0, 0, 0.95);
     transition: 0.3s;
 }
 
-btn-link {
+.btn-link {
     color:rgb(0, 0, 0);
 }
 
@@ -110,12 +110,13 @@ btn-link {
 footer {
     background-color: rgb(255, 255, 255);
     width: 100%;
+    padding: 40px;
 }
 
 .section-title {
     text-align: center;
     font-weight: light;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     padding-bottom: 15px;
     position: relative;
 }
@@ -124,11 +125,11 @@ footer {
     content: "";
     position: absolute;
     display: block;
-    width: 300px;
+    width: 250px;
     height: 1px;
     background: rgb(192, 192, 192);
     bottom: 1px;
-    left: calc(50% - 150px);
+    left: calc(50% - 125px);
 }
 
 .section-title::after {
@@ -140,4 +141,8 @@ footer {
     background: #000000;
     bottom: 0;
     left: calc(50% - 35px);
+}
+
+footer {
+    height: 100%;
 }
