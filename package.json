@@ -1,0 +1,31 @@
+{
+  "name": "r-angeles.github.io",
+  "version": "1.0.0",
+  "description": "portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "build:tailwind": "npx postcss src/static/css/tailwind.css -o public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-angeles/r-angeles.github.io.git"
+  },
+  "author": "r-angeles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/r-angeles/r-angeles.github.io/issues"
+  },
+  "homepage": "https://github.com/r-angeles/r-angeles.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.14",
+    "nunjucks": "^3.2.3",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.2.4"
+  }
+}

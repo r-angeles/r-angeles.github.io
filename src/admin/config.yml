@@ -1,0 +1,78 @@
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: main
+  ### enable below lines for github integration ###
+  # name: github
+  # repo: surjithctly/eleventy-starter
+
+# Uncomment below to enable a link to your published site in the header bar of Netlify CMS
+# site_url: https://eleventy-netlify-boilerplate.netlify.app/
+
+# Media files will be stored in the repo under images/uploads
+media_folder: "src/static/img"
+public_folder: "/static/img"
+
+# The backend option specifies how to access the content for your site
+# Please run "npx @staticcms/proxy-server" for local backend
+local_backend: true
+
+
+# publish_mode: editorial_workflow
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        create: true
+        options: ["Tags", "created", "from", "config.yml"]
+  # - label: "Settings"
+  #   name: "settings"
+  #   editor:
+  #     preview: false
+  #   files:
+  #     - label: "Navigation"
+  #       name: "items"
+  #       file: "src/_data/navigation.yaml"
+  #       fields:
+  #         - label: Nav Items
+  #           name: items
+  #           widget: list
+  #           allow_add: false
+  #           collapsed: false
+  #           fields:
+  #             - { label: Title, name: text, widget: string }
+  #             - { label: URL, name: url, widget: string }
+  #     - label: "Quick Links"
+  #       name: "links"
+  #       file: "src/_data/quicklinks.yaml"
+  #       fields:
+  #         - label: Nav Items
+  #           name: links
+  #           widget: list
+  #           collapsed: false
+  #           fields:
+  #             - { label: Title, name: title, widget: string }
+  #             - { label: URL, name: url, widget: string }
+  #             - { label: Description, name: desc, widget: string }
+  #     - label: "Meta Settings"
+  #       name: "settings"
+  #       file: "src/_data/settings.yaml"
+  #       fields:
+  #         - { label: Name, name: name, widget: string }
+  #         - { label: Author, name: author, widget: string }
+  #         - { label: URL, name: url, widget: string }
