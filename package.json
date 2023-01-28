@@ -4,10 +4,13 @@
   "description": "portfolio site",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve",
+    "dev:eleventy": "npx @11ty/eleventy --serve",
+    "dev:postcss": "npx postcss src/static/css/tailwind.css --o _site/styles.css --watch",
+    "dev": "npm-run-all --parallel dev:*",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "build:tailwind": "npx postcss src/static/css/tailwind.css -o public/css/styles.css"
+    "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
+    "build:postcss": "npx postcss src/static/css/tailwind.css --o _site/styles.css",
+    "build": "NODE_ENV=production npm-run-all --sequential build:eleventy build:tailwind"
   },
   "repository": {
     "type": "git",
@@ -21,8 +24,12 @@
   "homepage": "https://github.com/r-angeles/r-angeles.github.io#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
+    "html-minifier": "^4.0.0",
+    "luxon": "^3.2.1",
+    "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.3",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",

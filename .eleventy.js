@@ -1,36 +1,37 @@
+const { DateTime } = require("luxon");
 const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
-    // Watch content images for the image pipeline.
-	// eleventyConfig.addWatchTarget("content/**/*.{avif,svg,webp,png,jpeg}");
 
-    // Copy Files to /_Site
+    // Human readable date
+    eleventyConfig.addFilter("readableDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+        "dd LLL yyyy"
+        );
+    });
+
+    // Copy files to /_site
     eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
     });
-
-    eleventyConfig.addPassthroughCopy("./src/static/css/styles.css");
-
     eleventyConfig.addPassthroughCopy("./src/static/img");
-
     eleventyConfig.addPassthroughCopy("./src/favicon.ico");
 
     // Watch changes for the pipeline.
     eleventyConfig.addWatchTarget("./src/static/css/tailwind.css");
+    eleventyConfig.addWatchTarget("./src/static/img");
 
-    // Minify HTML
-    eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-        // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-        if (outputPath.endsWith(".html")) {
-        let minified = htmlmin.minify(content, {
-            useShortDoctype: true,
-            removeComments: true,
-            collapseWhitespace: true,
+    // Minify HTML - use transforms below only for Eleventy versions prior 2.0
+    eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+        return htmlmin.minify(content, {
+        collapseWhitespace: true,
+        removeComments: true,
+        useShortDoctype: true,
         });
-        return minified;
-        }
-    
-        return content;
+    }
+
+    return content;
     });
 
     return {
@@ -44,12 +45,12 @@ module.exports = function(eleventyConfig) {
         // Pre-process *.html files with: (default: `liquid`)
         htmlTemplateEngine: "njk",
 
-        // pptional:
+        // Pre-process data with: (default: `liquid`)
+        dataTemplateEngine: "njk",
+
         dir: {
-            input: "content", // default: "."
-            output: "public", 
-            // default: "_includes",
-            // default: "_data",
+            input: "src",
+            output: "_site",
         },
     }
 };

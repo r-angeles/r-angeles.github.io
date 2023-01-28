@@ -14,7 +14,12 @@ media_folder: "src/static/img"
 public_folder: "/static/img"
 
 # The backend option specifies how to access the content for your site
-# Please run "npx @staticcms/proxy-server" for local backend
+# Run "npx @staticcms/proxy-server" for local backend
+# backend:
+#   name: proxy
+#   proxy_url: http://localhost:8081/api/v1
+#   branch: master # optional, defaults to master
+
 local_backend: true
 
 
@@ -22,7 +27,7 @@ local_backend: true
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Post" # Used in the UI
-    folder: "posts" # The path to the folder where the documents are stored
+    folder: "src/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -40,39 +45,3 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
-  # - label: "Settings"
-  #   name: "settings"
-  #   editor:
-  #     preview: false
-  #   files:
-  #     - label: "Navigation"
-  #       name: "items"
-  #       file: "src/_data/navigation.yaml"
-  #       fields:
-  #         - label: Nav Items
-  #           name: items
-  #           widget: list
-  #           allow_add: false
-  #           collapsed: false
-  #           fields:
-  #             - { label: Title, name: text, widget: string }
-  #             - { label: URL, name: url, widget: string }
-  #     - label: "Quick Links"
-  #       name: "links"
-  #       file: "src/_data/quicklinks.yaml"
-  #       fields:
-  #         - label: Nav Items
-  #           name: links
-  #           widget: list
-  #           collapsed: false
-  #           fields:
-  #             - { label: Title, name: title, widget: string }
-  #             - { label: URL, name: url, widget: string }
-  #             - { label: Description, name: desc, widget: string }
-  #     - label: "Meta Settings"
-  #       name: "settings"
-  #       file: "src/_data/settings.yaml"
-  #       fields:
-  #         - { label: Name, name: name, widget: string }
-  #         - { label: Author, name: author, widget: string }
-  #         - { label: URL, name: url, widget: string }
