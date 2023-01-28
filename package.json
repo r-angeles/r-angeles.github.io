@@ -10,7 +10,7 @@
     "debug": "DEBUG=* npx @11ty/eleventy",
     "build:eleventy": "ELEVENTY_PRODUCTION=true npx @11ty/eleventy",
     "build:postcss": "npx postcss src/static/css/tailwind.css --o _site/styles.css",
-    "build": "NODE_ENV=production npm-run-all --sequential build:eleventy build:tailwind"
+    "build": "NODE_ENV=production npm-run-all --sequential build:eleventy build:postcss"
   },
   "repository": {
     "type": "git",
