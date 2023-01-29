@@ -1,38 +1,24 @@
+# Specifies how site content will be accessed
+# Log in and authenticate directly with GitHub account
 backend:
-  # Use netlify identity as backend
-  name: git-gateway
+  name: github
+  repo: r-angeles/r-angeles.github.io
   branch: main
-  ### enable below lines for github integration ###
-  # name: github
-  # repo: surjithctly/eleventy-starter
 
-# Uncomment below to enable a link to your published site in the header bar of Netlify CMS
-# site_url: https://eleventy-netlify-boilerplate.netlify.app/
-
-# Media files will be stored in the repo under images/uploads
-media_folder: "src/static/img"
-public_folder: "/static/img"
-
-# The backend option specifies how to access the content for your site
-# Run "npx @staticcms/proxy-server" for local backend
-# backend:
-#   name: proxy
-#   proxy_url: http://localhost:8081/api/v1
-#   branch: master # optional, defaults to master
+media_folder: src/static/img
+public_folder: /static/img
 
 local_backend: true
 
-
 # publish_mode: editorial_workflow
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
+  - label: "Blog" # Used in the UI
+    name: "blog" # Used in routes, e.g., /admin/collections/blog
     folder: "src/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
     editor:
-      preview: false
+      preview: true
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
@@ -45,3 +31,56 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+  - label: Settings
+    name: settings
+    editor:
+      preview: false
+    files:
+      - label: Navigation
+        name: items
+        file: src/_data/navigationLinks.yaml
+        fields:
+          label: Nav items
+          name: items
+          widget: list
+          allow_add: true
+          collapsed: false
+          fields:
+            - label: Title
+              name: text
+              widget: string
+            - label: URL
+              name: url
+              widget: string
+      - label: Metadata settings
+        name: items
+        file: src/_data/metadata.yaml
+        fields:
+          label: Data items
+          name: items
+          widget: list
+          allow_add: false
+          collapsed: false
+          fields:
+            - label: Title
+              name: text
+              widget: string
+            - label: URL
+              name: url
+              widget: string
+            - label: Language
+              name: text
+              widget: string
+              pattern:
+                - /^[a-z]{2}$/i
+                - Eg. en, nz, de, ko
+            - label: Description
+              name: text
+              widget: string
+            - fields:
+                - label: Author
+                  name: text
+                  widget: string
+                - label: Author URL
+                  name: url
+                  widget: string

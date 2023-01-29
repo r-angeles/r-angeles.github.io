@@ -1,3 +1,4 @@
+const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const htmlmin = require("html-minifier");
 
@@ -9,6 +10,10 @@ module.exports = function(eleventyConfig) {
         "dd LLL yyyy"
         );
     });
+
+    // Add support for .yaml Extension in _data
+    // You may remove this if you can use JSON
+    eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
     // Copy files to /_site
     eleventyConfig.addPassthroughCopy({
