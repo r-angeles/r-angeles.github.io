@@ -1,4 +1,4 @@
-#  r-angeles.github.io ![Build Eleventy](https://github.com/r-angeles/r-angeles.github.io/actions/workflows/deploy.yml/badge.svg)
+#  r-angeles.github.io ![Build GH-Pages](https://github.com/r-angeles/r-angeles.github.io/actions/workflows/deploy.yml/badge.svg)
 
 A website making use of Static CMS, Eleventy, & Tailwind CSS that is deployed to GitHub Pages
 
@@ -32,7 +32,7 @@ When ready, push to GitHub. Note that this website is set up on GitHub pages. It
 Go to `Settings -> Pages -> Build and deployment` then change  `Source` to `GitHub Actions`.
 
 ### Edit metadata
-Configure the metadata through navigating to `src -> _data` and modifying the files eg. `metadata.json`, `navigationLinks.json` 
+Configure the metadata through navigating to `src -> _data` and modifying the files eg. `metadata.yaml`, `navigationLinks.yaml` 
 
 OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
 
@@ -42,7 +42,8 @@ OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
 - [Static CMS](https://staticjscms.netlify.app/) for content management
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com)
 - [luxon](https://moment.github.io/luxon/)
-- [html-minifier](https://kangax.github.io/html-minifier/) and [cssnano](https://cssnano.co/)
+- [html-minifier](https://kangax.github.io/html-minifier/)
+- [cssnano](https://cssnano.co/)
 - [js-yaml](https://github.com/nodeca/js-yaml)
 
 ### Needs fixing
