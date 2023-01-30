@@ -4,12 +4,12 @@ A website making use of Static CMS, Eleventy, & Tailwind CSS that is deployed to
 
 ## Website Link
 
-- [Link to site](https://r-angles.github.io)
+- [Link to site](https://r-angeles.github.io)
 
 ## Getting Started
 To start working locally, clone this repository:
 ```
-git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
+git clone https://github.com/r-angeles/r-angeles.github.io.git insert-project-name
 ```
 
 Go to the project directory and install Node dependencies:
@@ -36,6 +36,24 @@ Configure the metadata through navigating to `src -> _data` and modifying the fi
 
 OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
 
+### CMS OAuth
+GitHub account will be used to log in to CMS. See the [Static CMS docs](https://staticjscms.netlify.app/docs/github-backend) to set up a basic GitHub Authentication.
+
+Alternatively, Git Gateway can be used for authentication to edit files without giving direct access to the repository. Simply go to `src -> admin` and change the code:
+```
+backend:
+  name: github
+  repo: owner-name/repo-name
+  branch: main
+  site_domain: my-site.netlify.app
+```
+to
+```
+backend:
+  name: git-gateway
+```
+Then visit the [Static CMS docs](https://staticjscms.netlify.app/docs/git-gateway-backend) for more instructions.
+
 ## Under the hood
 ### What's used?
 - [Eleventy](https://www.11ty.dev/) as main static site generator
@@ -50,12 +68,12 @@ OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
 - Static CMS not properly integrated/not working
 
 ### To be added
-- [`eleventy-img` plugin](https://www.11ty.dev/docs/plugins/image/).
+- [`eleventy-img` plugin](https://www.11ty.dev/docs/plugins/image/)
 - [Giscus](https://giscus.app/) comments system utilizing GitHub Discussions
-
 
 ## License ![GitHub](https://img.shields.io/github/license/r-angeles/r-angeles.github.io)
 
 Copyright (c) 2023 Rae Angeles ([@rae_angeles](https://twitter.com/rae_angeles))
 
 This project is licensed under the MIT License - visit the [LICENSE.md](https://github.com/r-angeles/r-angeles.github.io/blob/main/LICENSE) file for more details
+

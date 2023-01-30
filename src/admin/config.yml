@@ -4,6 +4,7 @@ backend:
   name: github
   repo: r-angeles/r-angeles.github.io
   branch: main
+  site_domain: r-angeles.netlify.app
 
 media_folder: src/static/img
 public_folder: /static/img
@@ -30,7 +31,7 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["Tags", "created", "from", "config.yml"]
+        options: ["Tags", "tags", "template", "tag"]
   - label: Settings
     name: settings
     editor:
