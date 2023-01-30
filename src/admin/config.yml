@@ -3,15 +3,23 @@
 backend:
   name: github
   repo: r-angeles/r-angeles.github.io
-  branch: main
+  branch: main # optional; defaults to main
   site_domain: r-angeles.netlify.app
+
+site_url: https://r-angeles.github.io/
 
 media_folder: src/static/img
 public_folder: /static/img
 
-local_backend: true
+# local_backend: true
 
-# publish_mode: editorial_workflow
+# # Cloudinary
+# media_library:
+#   name: cloudinary
+#   config:
+#     cloud_name: name
+#     api_key: key
+
 collections:
   - label: "Blog" # Used in the UI
     name: "blog" # Used in routes, e.g., /admin/collections/blog

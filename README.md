@@ -37,27 +37,14 @@ Configure the metadata through navigating to `src -> _data` and modifying the fi
 OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
 
 ### CMS OAuth
-GitHub account will be used to log in to CMS. See the [Static CMS docs](https://staticjscms.netlify.app/docs/github-backend) to set up a basic GitHub Authentication.
+GitHub account will be used to log in to CMS. See the [Static CMS docs](https://www.staticcms.org/docs/github-backend) to set up a basic GitHub Authentication.
 
-Alternatively, Git Gateway can be used for authentication to edit files without giving direct access to the repository. Simply go to `src -> admin` and change the code:
-```
-backend:
-  name: github
-  repo: owner-name/repo-name
-  branch: main
-  site_domain: my-site.netlify.app
-```
-to
-```
-backend:
-  name: git-gateway
-```
-Then visit the [Static CMS docs](https://staticjscms.netlify.app/docs/git-gateway-backend) for more instructions.
+Alternatively, Git Gateway can be used for authentication to edit files without giving direct access to the repository. Visit the [Static CMS docs](https://www.staticcms.org/docs/add-to-your-site-cdn) for more details on setting it up.
 
 ## Under the hood
 ### What's used?
 - [Eleventy](https://www.11ty.dev/) as main static site generator
-- [Static CMS](https://staticjscms.netlify.app/) for content management
+- [Static CMS](https://www.staticcms.org/) for content management
 - [PostCSS](https://postcss.org) and [Tailwind CSS](https://tailwindcss.com)
 - [luxon](https://moment.github.io/luxon/)
 - [html-minifier](https://kangax.github.io/html-minifier/)
