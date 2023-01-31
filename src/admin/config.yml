@@ -46,50 +46,29 @@ collections:
       preview: false
     files:
       - label: Navigation
-        name: items
+        name: nav items
         file: src/_data/navigationLinks.yaml
+        allow_add: true
+        collapsed: false
         fields:
-          label: Nav items
-          name: items
-          widget: list
-          allow_add: true
-          collapsed: false
-          fields:
-            - label: Title
-              name: text
-              widget: string
-            - label: URL
-              name: url
-              widget: string
-      - label: Metadata settings
-        name: items
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+      - label: Metadata/header settings
+        name: metadata items
         file: src/_data/metadata.yaml
+        allow_add: false
+        collapsed: false
         fields:
-          label: Data items
-          name: items
-          widget: list
-          allow_add: false
-          collapsed: false
-          fields:
-            - label: Title
-              name: text
-              widget: string
-            - label: URL
-              name: url
-              widget: string
-            - label: Language
-              name: text
-              widget: string
-              pattern:
-                - /^[a-z]{2}$/i
-                - Eg. en, nz, de, ko
-            - label: Description
-              name: text
-              widget: string
-            - fields:
-                - label: Author
-                  name: text
-                  widget: string
-                - label: Author URL
-                  name: url
-                  widget: string
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "URL", name: "url", widget: "string"}
+          - {label: "Language", name: "title", widget: "string", pattern: ['/^[a-z]{2}$/i', "Eg. en, nz, de, ko"]}
+          - label: Description
+            name: desc text
+            widget: string
+            fields:
+              - label: Author Metadata
+                name: author data
+                widget: list
+                fields: 
+                  - {label: "Author", name: "text", widget: "string"}
+                  - {label: "Author URL", name: "url", widget: "string"}
