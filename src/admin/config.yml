@@ -1,14 +1,12 @@
 # Specifies how site content will be accessed
 # Log in and authenticate directly with GitHub account
 backend:
-  # Uncomment below if using GitHub for Auth and remove name: git-gateway
-  # name: github
-  # repo: r-angeles/r-angeles.github.io
-  name: git-gateway
+  name: github
+  repo: r-angeles/r-angeles.github.io # name/repo
   branch: main # optional; defaults to main
-  site_domain: r-angeles.netlify.app
+  site_domain: r-angeles.netlify.app # your-site.netlify.app
 
-site_url: https://r-angeles.github.io/
+site_url: https://r-angeles.github.io/ # your-site.github.io
 
 media_folder: src/static/img
 public_folder: /static/img
@@ -42,34 +40,34 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "tags", "template", "tag"]
-  - label: Settings
-    name: settings
+  - label: "Settings"
+    name: "settings"
     editor:
       preview: false
     files:
-      - label: Navigation
-        name: nav items
-        file: src/_data/navigationLinks.yaml
+      - label: "Navigation"
+        name: "nav items"
+        file: "src/_data/navigationLinks.yaml"
         allow_add: true
         collapsed: false
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "URL", name: "url", widget: "string"}
-      - label: Metadata/header settings
-        name: metadata items
-        file: src/_data/metadata.yaml
+      - label: "Metadata/header settings"
+        name: "metadata items"
+        file: "src/_data/metadata.yaml"
         allow_add: false
         collapsed: false
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "URL", name: "url", widget: "string"}
           - {label: "Language", name: "text", widget: "string", pattern: ['/^[a-z]{2}$/i', "Eg. en, nz, de, ko"]}
-          - label: Description
-            name: desc text
+          - label: "Description"
+            name: "desc text"
             widget: string
             fields:
-              - label: Author Metadata
-                name: author data
+              - label: "Author Metadata"
+                name: "author data"
                 widget: list
                 fields: 
                   - {label: "Author", name: "text", widget: "string"}
