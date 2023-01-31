@@ -1,8 +1,10 @@
 # Specifies how site content will be accessed
 # Log in and authenticate directly with GitHub account
 backend:
-  name: github
-  repo: r-angeles/r-angeles.github.io
+  # Uncomment below if using GitHub for Auth and remove name: git-gateway
+  # name: github
+  # repo: r-angeles/r-angeles.github.io
+  name: git-gateway
   branch: main # optional; defaults to main
   site_domain: r-angeles.netlify.app
 
@@ -61,7 +63,7 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "URL", name: "url", widget: "string"}
-          - {label: "Language", name: "title", widget: "string", pattern: ['/^[a-z]{2}$/i', "Eg. en, nz, de, ko"]}
+          - {label: "Language", name: "text", widget: "string", pattern: ['/^[a-z]{2}$/i', "Eg. en, nz, de, ko"]}
           - label: Description
             name: desc text
             widget: string

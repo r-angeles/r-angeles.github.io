@@ -37,9 +37,9 @@ Configure the metadata through navigating to `src -> _data` and modifying the fi
 OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
 
 ### CMS OAuth
-GitHub account will be used to log in to CMS. See the [Static CMS docs](https://www.staticcms.org/docs/github-backend) to set up a basic GitHub Authentication.
+Git Gateway is used for authentication to edit files without registering a GitHub account. Visit the [Static CMS docs](https://www.staticcms.org/docs/add-to-your-site-cdn) for more details on setting it up.
 
-Alternatively, Git Gateway can be used for authentication to edit files without giving direct access to the repository. Visit the [Static CMS docs](https://www.staticcms.org/docs/add-to-your-site-cdn) for more details on setting it up.
+To directly use a GitHub account to log in to the CMS. See the [Static CMS docs](https://www.staticcms.org/docs/github-backend) to set up a basic GitHub Authentication.
 
 ## Under the hood
 ### What's used?
