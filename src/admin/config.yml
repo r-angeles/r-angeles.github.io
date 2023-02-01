@@ -8,10 +8,10 @@ backend:
 
 site_url: https://r-angeles.github.io/ # your-site.github.io
 
-media_folder: src/static/img
-public_folder: /static/img
+media_folder: "src/static/img"
+public_folder: "/static/img"
 
-# local_backend: true
+local_backend: true
 
 # # Cloudinary
 # media_library:
@@ -53,7 +53,7 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "URL", name: "url", widget: "string"}
-      - label: "Metadata/header settings"
+      - label: "Metadata / HTML Header"
         name: "metadata items"
         file: "src/_data/metadata.yaml"
         allow_add: false

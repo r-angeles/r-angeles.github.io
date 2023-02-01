@@ -34,12 +34,12 @@ Go to `Settings -> Pages -> Build and deployment` then change  `Source` to `GitH
 ### Edit metadata
 Configure the metadata through navigating to `src -> _data` and modifying the files eg. `metadata.yaml`, `navigationLinks.yaml` 
 
-OR, use Static CMS to edit `_data` on a GUI. (Note: does not work currently)
+OR, use Static CMS to edit `_data` on a GUI by going visiting your-site-name.gihub.io/admin
 
 ### CMS OAuth
 GitHub account will be used to log in to CMS. See the [Static CMS docs](https://www.staticcms.org/docs/github-backend) to set it up.
 
-Alternatively, [Git Gateway](https://docs.netlify.com/visitor-access/git-gateway/) can be used for authentication to edit files without logging in to GitHub. Visit the [Static CMS docs](https://www.staticcms.org/docs/add-to-your-site-cdn) for more details on setting it up (Note: The site must be hosted on [Netlify](https://www.netlify.com/) to enable it)
+Alternatively, [Git Gateway](https://docs.netlify.com/visitor-access/git-gateway/) can be used for authentication to edit files without logging in to GitHub. Visit the [Static CMS docs](https://www.staticcms.org/docs/add-to-your-site-cdn) for more details on setting it up (Note: The site must be hosted on [Netlify](https://www.netlify.com/) first)
 
 ## Under the hood
 ### What's used?
