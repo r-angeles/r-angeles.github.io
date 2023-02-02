@@ -7,6 +7,7 @@ backend:
   site_domain: r-angeles.netlify.app # your-site.netlify.app
 
 site_url: https://r-angeles.github.io/ # your-site.github.io
+display_url: https://r-angeles.github.io/
 
 media_folder: "src/static/img"
 public_folder: "/static/img"
@@ -23,6 +24,8 @@ local_backend: true
 collections:
   - label: "Blog" # Used in the UI
     name: "blog" # Used in routes, e.g., /admin/collections/blog
+    description: >
+      Blogs will be stored, written, and published here.
     folder: "src/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -42,33 +45,73 @@ collections:
         options: ["Tags", "tags", "template", "tag"]
   - label: "Settings"
     name: "settings"
+    format: "yaml-frontmatter"
     editor:
       preview: false
     files:
-      - label: "Navigation"
-        name: "nav items"
-        file: "src/_data/navigationLinks.yaml"
-        allow_add: true
-        collapsed: false
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "URL", name: "url", widget: "string"}
       - label: "Metadata / HTML Header"
-        name: "metadata items"
+        name: "metadata-items"
         file: "src/_data/metadata.yaml"
         allow_add: false
         collapsed: false
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "URL", name: "url", widget: "string"}
-          - {label: "Language", name: "text", widget: "string", pattern: ['/^[a-z]{2}$/i', "Eg. en, nz, de, ko"]}
-          - label: "Description"
-            name: "desc text"
-            widget: string
-            fields:
-              - label: "Author Metadata"
-                name: "author data"
-                widget: list
-                fields: 
-                  - {label: "Author", name: "text", widget: "string"}
-                  - {label: "Author URL", name: "url", widget: "string"}
+          - {label: "Language", name: "language", widget: "string", pattern: ['^[a-z]{2}$', "Examples -> en, nz, de, ko"]}
+          - {label: "Description (Search Engine Desc)", name: "description", widget: "string"}
+      - label: "Navigation"
+        name: "nav-items"
+        file: "src/_data/navigationLinks.yaml"
+        collapsed: false
+        fields:
+        - label: "Social media"
+          name: "socialLinks"
+          widget: list
+          summary: "Links for social media"
+          max: 3
+          fields:
+            - label: "Social media link"
+              name: "link"
+              widget: string
+              default: "https://www.twitter.com/@your.name"
+            - label: "Social media icon"
+              name: "icon"
+              widget: select
+              default: "Twitter"
+              options:
+                - label: "Facebook"
+                  value: Facebook
+                - label: "Github"
+                  value: Github
+                - label: "Instagram"
+                  value: Instagram
+                - label: "LinkedIn"
+                  value: LinkedIn
+                - label: "TikTok"
+                  value: TikTok
+                - label: "Twitter"
+                  value: Twitter
+          # - label: "About Link"
+          #   name: "About"
+          #   widget: "list"
+          #   collapsed: false
+          #   fields: 
+          #     - label: "URL"
+          #       name: "url"
+          #       widget: "string"
+          # - label: "GitHub Link"
+          #   name: "GitHub"
+          #   widget: "object"
+          #   collapsed: false
+          #   fields: 
+          #     - label: "URL"
+          #       name: "url"
+          #       widget: "string"
+          # - label: "Twitter Link"
+          #   name: "Twitter"
+          #   widget: "object"
+          #   collapsed: false
+          #   fields: 
+          #     - label: "URL"
+          #       name: "url"
+          #       widget: "string"

@@ -34,7 +34,7 @@ Go to `Settings -> Pages -> Build and deployment` then change  `Source` to `GitH
 ### Edit metadata
 Configure the metadata through navigating to `src -> _data` and modifying the files eg. `metadata.yaml`, `navigationLinks.yaml` 
 
-OR, use Static CMS to edit `_data` on a GUI by going visiting your-site-name.gihub.io/admin
+OR, use Static CMS to edit `_data` on a GUI by visiting your-site-name.gihub.io/admin
 
 ### CMS OAuth
 GitHub account will be used to log in to CMS. See the [Static CMS docs](https://www.staticcms.org/docs/github-backend) to set it up.
@@ -51,12 +51,13 @@ Alternatively, [Git Gateway](https://docs.netlify.com/visitor-access/git-gateway
 - [cssnano](https://cssnano.co/)
 - [js-yaml](https://github.com/nodeca/js-yaml)
 
-### Needs fixing
-- Static CMS not properly integrated/not working
-
 ### To be added
 - [`eleventy-img` plugin](https://www.11ty.dev/docs/plugins/image/)
 - [Giscus](https://giscus.app/) comments system utilizing GitHub Discussions
+
+### Known Issues
+- Static CMS does not throw error if `config.yml` has typos, bugs, etc. Current workaround is switching the Static CMS CDN to the Netlify CMS CDN on `admin/index.html` to check for errors
+- No support for mobile editing
 
 ## License ![GitHub](https://img.shields.io/github/license/r-angeles/r-angeles.github.io)
 
