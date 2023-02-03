@@ -1,5 +1,5 @@
 module.exports = {
-    "layout": "blog",
+    "layout": "layouts/base.njk",
     "tags": [
         "post"
     ]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+    {% include "components/head.njk" %}
+    <body class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+        <header class="flex justify-between items-center py-4 md:py-8 mb-4">
+            <nav class="flex gap-10">
+                <a href="/" class="text-lg font-semibold">Home</a>
+            </nav>
+            {% for link in socialLinks %}
+            <a href="{{ link.url }}" class="inline-block hover:text-gray-500 text-lg font-semibold">		
+                {{ link.text }}	
+            </a>	
+            {% endfor %}
+            <a href="#" class="inline-block"> {% inlineSvg 'src/_includes/assets/svg/facebook.svg' %} </a>
+        </header>
+        <main>
+            <h1>{{ title or metadata.title }}</h1>
+            {{ content | safe }}
+            {% include "components/footer.njk" %} 
+        </main>
+    </body>
+</html>

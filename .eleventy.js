@@ -1,5 +1,6 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
+const Image = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
 
 module.exports = function(eleventyConfig) {
@@ -10,6 +11,16 @@ module.exports = function(eleventyConfig) {
         "dd LLL yyyy"
         );
     });
+
+    // Inlining SVG
+    eleventyConfig.addNunjucksAsyncShortcode("inlineSvg", async (src, alt, sizes) => {
+        let metadata = await Image(src, {
+          formats: ["svg"],
+          dryRun: true,
+        })  
+        
+        return metadata.svg[0].buffer.toString()
+    })
 
     // Add support for .yaml Extension in _data
     // You may remove this if you can use JSON
@@ -56,6 +67,8 @@ module.exports = function(eleventyConfig) {
         dir: {
             input: "src",
             output: "_site",
+            includes: "_includes",
+            data: "_data",
         },
     }
 };
