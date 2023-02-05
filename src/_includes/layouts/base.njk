@@ -6,17 +6,11 @@
             <nav class="flex gap-10">
                 <a href="/" class="text-lg font-semibold">Home</a>
             </nav>
-            {% for link in socialLinks %}
-            <a href="{{ link.url }}" class="inline-block hover:text-gray-500 text-lg font-semibold">		
-                {{ link.text }}	
-            </a>	
-            {% endfor %}
-            <a href="#" class="inline-block"> {% inlineSvg 'src/_includes/assets/svg/facebook.svg' %} </a>
         </header>
         <main>
             <h1>{{ title or metadata.title }}</h1>
             {{ content | safe }}
-            {% include "components/footer.njk" %} 
         </main>
+        {% include "components/footer.njk" %}
     </body>
 </html>

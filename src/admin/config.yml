@@ -59,59 +59,35 @@ collections:
           - {label: "URL", name: "url", widget: "string"}
           - {label: "Language", name: "language", widget: "string", pattern: ['^[a-z]{2}$', "Examples -> en, nz, de, ko"]}
           - {label: "Description (Search Engine Desc)", name: "description", widget: "string"}
-      - label: "Navigation"
-        name: "nav-items"
-        file: "src/_data/navigationLinks.yaml"
+      - label: "Social"
+        name: "social-items"
+        file: "src/_data/social.yaml"
+        max: 4
         collapsed: false
         fields:
         - label: "Social media"
           name: "socialLinks"
           widget: list
           summary: "Links for social media"
-          max: 3
           fields:
             - label: "Social media link"
               name: "link"
               widget: string
-              default: "https://www.twitter.com/@your.name"
+              default: "https://twitter.com/@your.name"
             - label: "Social media icon"
               name: "icon"
               widget: select
               default: "Twitter"
               options:
                 - label: "Facebook"
-                  value: Facebook
+                  value: facebook.svg
                 - label: "Github"
-                  value: Github
+                  value: github.svg
                 - label: "Instagram"
-                  value: Instagram
+                  value: instagram.svg
                 - label: "LinkedIn"
-                  value: LinkedIn
+                  value: linkedin.svg
                 - label: "TikTok"
-                  value: TikTok
+                  value: tiktok.svg
                 - label: "Twitter"
-                  value: Twitter
-          # - label: "About Link"
-          #   name: "About"
-          #   widget: "list"
-          #   collapsed: false
-          #   fields: 
-          #     - label: "URL"
-          #       name: "url"
-          #       widget: "string"
-          # - label: "GitHub Link"
-          #   name: "GitHub"
-          #   widget: "object"
-          #   collapsed: false
-          #   fields: 
-          #     - label: "URL"
-          #       name: "url"
-          #       widget: "string"
-          # - label: "Twitter Link"
-          #   name: "Twitter"
-          #   widget: "object"
-          #   collapsed: false
-          #   fields: 
-          #     - label: "URL"
-          #       name: "url"
-          #       widget: "string"
+                  value: twitter.svg

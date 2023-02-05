@@ -31,6 +31,13 @@ When ready, push to GitHub. Note that this website is set up on GitHub pages. It
 
 Go to `Settings -> Pages -> Build and deployment` then change  `Source` to `GitHub Actions`.
 
+### Using Static CMS locally
+To start editing locally with Static CMS, run:
+```
+npm run local
+```
+Then visit `http://localhost:8080/admin`
+
 ### Edit metadata
 Configure the metadata through navigating to `src -> _data` and modifying the files eg. `metadata.yaml`, `navigationLinks.yaml` 
 
@@ -52,12 +59,12 @@ Alternatively, [Git Gateway](https://docs.netlify.com/visitor-access/git-gateway
 - [js-yaml](https://github.com/nodeca/js-yaml)
 
 ### To be added
-- [`eleventy-img` plugin](https://www.11ty.dev/docs/plugins/image/)
 - [Giscus](https://giscus.app/) comments system utilizing GitHub Discussions
 
 ### Known Issues
-- Static CMS does not throw error if `config.yml` has typos, bugs, etc. Current workaround is switching the Static CMS CDN to the Netlify CMS CDN on `admin/index.html` to check for errors
-- No support for mobile editing
+- Static CMS 1.0.0 does not throw error if `config.yml` has typos, bugs, etc. Current workaround is switching the Static CMS CDN to the Netlify CMS CDN on `admin/index.html` to check for errors
+- Static CMS 1.0.0 have no current support for mobile editing
+- SVG does not show
 
 ## License ![GitHub](https://img.shields.io/github/license/r-angeles/r-angeles.github.io)
 
