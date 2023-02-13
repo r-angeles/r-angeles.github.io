@@ -80,14 +80,14 @@ collections:
               default: "Twitter"
               options:
                 - label: "Facebook"
-                  value: facebook.svg
+                  value: facebook
                 - label: "Github"
-                  value: github.svg
+                  value: github
                 - label: "Instagram"
-                  value: instagram.svg
+                  value: instagram
                 - label: "LinkedIn"
-                  value: linkedin.svg
+                  value: linkedin
                 - label: "TikTok"
-                  value: tiktok.svg
+                  value: tiktok
                 - label: "Twitter"
-                  value: twitter.svg
+                  value: twitter

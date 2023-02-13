@@ -9,11 +9,6 @@
 			<div class="flex gap-4">
 				{% for social in social.socialLinks %}
 				<a href="{{ social.link }}" target="_blank" class="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100">		
-					{% svg "{{ social.icon }}" %}	
-				</a>
-				{% endfor %}
-				{% for social in social.socialLinks %}
-				<a href="{{ social.link }}" target="_blank" class="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100">		
 					{{ social.icon }}
 				</a>
 				{% endfor %}

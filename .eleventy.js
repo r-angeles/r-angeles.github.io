@@ -2,18 +2,8 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
-const svgSprite = require("eleventy-plugin-svg-sprite");
 
 module.exports = function(eleventyConfig) {
-
-    // Inlining SVG
-    eleventyConfig.addPlugin(svgSprite, {
-        defaultClasses: "w-5 h-5 fill-current",
-        path: "./src/_includes/icons", // relative path to SVG directory
-        svgSpriteShortcode: "svgsprite",
-        svgShortcode: "svg",
-    });
-        
     // Human readable date
     eleventyConfig.addFilter("readableDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
