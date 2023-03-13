@@ -29,7 +29,7 @@
     "@11ty/eleventy-img": "^3.0.0",
     "@staticcms/proxy-server": "^2.0.0",
     "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "cssnano": "^5.1.14",
     "html-minifier": "^4.0.0",
     "js-yaml": "^4.1.0",
